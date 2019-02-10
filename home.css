@@ -1,0 +1,14 @@
+html, body{
+    background: blue;
+    margin: 0;
+}
+
+.section{
+    height: 100vh;
+    width: 100%;
+    background: red;
+}
+
+#top{
+    background: green;
+}
