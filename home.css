@@ -1,14 +1,50 @@
-html, body{
+html{
     background: blue;
+    margin: 0;
+    overflow-y: hidden;
+}
+
+body{
     margin: 0;
 }
 
-.section{
+.smooth{
+    scroll-behavior: smooth;
+}
+
+.screen{
     height: 100vh;
     width: 100%;
-    background: red;
+    overflow-y: auto;
 }
 
 #top{
-    background: green;
+    background: green;   
+}
+
+#projects{
+    height: 150vh;
+    background: red;
+}
+
+#education{
+    height: 110vh;
+    background: orange;
+}
+
+#upBtn{
+    position: fixed;
+    top: 100px;
+    right: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+
+}
+
+#downBtn{
+    position: fixed;
+    bottom: 40px;
+    right: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
 }
