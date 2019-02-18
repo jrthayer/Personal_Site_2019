@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="timer.css">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    </head>
+
+    <body>
+        <div class="timer">
+            <div class="tmrAddOptions">
+                <button class="tmrAddHr tmrAddBtn tmrBtn">+</button>
+                <button class="tmrAddMin tmrAddBtn tmrMiddleBtn tmrBtn">+</button>
+                <button class="tmrAddSec tmrAddBtn tmrBtn">+</button>
+            </div>
+            <div class="tmrHrs tmrDisplay tmrNumbers">00</div>
+            <div class="tmrDisplay tmrColon">:</div>
+            <div class="tmrMins tmrDisplay tmrNumbers">00</div>
+            <div class="tmrDisplay tmrColon">:</div>
+            <div class="tmrSecs tmrDisplay tmrNumbers">00</div>
+            <div class="tmrSubOptions">
+                <button class="tmrSubHr tmrSubBtn tmrBtn">-</button>
+                <button class="tmrSubMin tmrSubBtn tmrMiddleBtn tmrBtn">-</button>
+                <button class="tmrSubSec tmrSubBtn tmrBtn">-</button>
+            </div>
+            <div class="tmrOptions">
+                <button class="tmrState tmrBtn">Start</button>
+                <button class="tmrReset tmrBtn">Reset</button>
+            </div>
+            <button class="remove tmrBtn tmrAlarmOff">Turn Off</button>
+            <audio class="tmrNoise" src="./assets/Annoying_Alarm_Clock.mp3" type="audio/mp3" loop></audio>
+        </div>
+
+        <script type="text/javascript" src="timer.js"></script>
+    </body>
+</html>

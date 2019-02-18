@@ -1,0 +1,65 @@
+:root{
+    --noteTextColor: rgb(38, 223, 38);
+    --noteBackground: #000000;
+    --noteFontSize: 30px;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: black;
+}
+
+.notepad::-webkit-scrollbar{
+    width: 30px;
+}
+ 
+.notepad::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 10px var(--noteTextColor);
+    border-radius: 10px;
+}
+ 
+.notepad::-webkit-scrollbar-thumb{
+  background-color: var(--noteTextColor);
+  outline: 5px solid var(--noteTextColor);
+  border-radius: 10px;
+}
+
+.note{
+    height: 100%;
+}
+
+.notepad{
+    width: calc(100% - 80px - 4px);
+    height: calc(100% - 100px - 4px);
+    margin: 40px;
+    margin-bottom: 0;
+    
+    border: solid 1px rgb(38, 223, 38);
+    border-radius: 10px;
+
+    outline:0;
+    background: black;
+    color: rgb(38, 223, 38);
+    outline: 0;
+    font-size: var(--noteFontSize);
+    resize: none;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.notepadBtn{
+    width: calc(100% - 80px);
+    padding: 0;
+    margin: 40px;
+    margin-top: 0;
+    border: none;
+    border-radius: 5px;
+    background: var(--noteTextColor);
+    color: var(--noteBackground);
+    font-size: 20px;
+    outline:0;
+}

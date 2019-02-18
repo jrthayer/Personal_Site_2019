@@ -36,7 +36,7 @@ window.onresize = function(){
         sectionsYPos[i] = sectionElements[i].offsetTop-parseInt(window.getComputedStyle(sectionElements[i]).getPropertyValue('margin-top'), 10);
     }
 
-    smoothScroll(window.scrollY, sectionsYPos[yPage], scrollAmnt, 10);
+    smoothScroll(window.scrollY, sectionsYPos[yPage], 50, 10);
 }
 
 window.onscroll = function(){
@@ -51,8 +51,6 @@ window.onscroll = function(){
 //Event Listeners
 
 //scrolls window on button press
-//the smooth is being added and removed because srollTo doesn't
-//work when using chrome smooth scrolling
 upBtn.addEventListener("click", 
     function(){
         smoothScroll(window.scrollY, sectionsYPos[yPage-1], scrollAmnt, scrollTic);

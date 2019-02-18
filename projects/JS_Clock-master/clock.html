@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="clock.css">
+    </head>
+
+    <body>
+        <div class="clock">
+            <div class="clckDisplay"></div>
+            <div class="clckAmPm disInline"></div>
+            <div class="clckAlarm">
+                <div class="alrmHeader"> ALARM</div>
+                <div class="alrmModify">
+                    <button class="armBtn">OFF</button>
+                    <button class="subMinBtn cButton">-</button>
+                    <button class="subHourBtn cButton">--</button>
+                    <div class="alrmDisplay">12:00</div>
+                    <div class="alrmAmPm disInline">AM</div>
+                    <button class="addHourBtn cButton">++</button>
+                    <button class="addMinBtn cButton">+</button>
+                </div>
+            </div>
+            
+            <button class="alrmResetBtn hide">Turn Off</button>
+            <audio class="alrmNoise" src="./assets/Annoying_Alarm_Clock.mp3" type="audio/mp3" loop></audio>
+        </div>
+        <script type="text/javascript" src="clock.js"></script>
+    </body>
+</html>

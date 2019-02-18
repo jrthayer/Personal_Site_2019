@@ -1,7 +1,9 @@
 html{
-    background: blue;
+    background: GhostWhite;
     margin: 0;
     overflow-y: hidden;
+    color: black;
+    /*background-image: linear-gradient(to right, white, black);*/
 }
 
 body{
@@ -15,6 +17,90 @@ body{
     overflow-y: auto;
     margin-top: 50px;
 }
+
+.sectionHeader{
+    position: relative;
+    text-align: center;
+    margin: 0;
+    padding-top: 50px;
+    font-size: 60px;
+}
+
+.secContent{
+    width: calc(100vw - 200px);
+    min-width: 500px;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border: solid 10px black;
+    border-radius: 15px;
+    background: DarkRed;
+    color: white;
+}
+
+.secContentHeader{
+    width: 100%;
+    margin: 10px;
+    text-align: center;
+    font-size: 35px;
+}
+
+.imgPanel{
+    width: calc(100% - 100px - 40px);
+    margin: 10px;
+    float: left;
+    display: inline-block;
+}
+
+.projPac{
+    width: calc(50% - 10px);
+    margin: 5px;
+    float: left;
+    min-width: 250px;
+}
+
+.pacImg{
+    border-radius: 15px;
+    width: 100%;
+    height: auto;
+    min-width: 250px;
+}
+
+.pacBtn{
+    min-width: calc(50% - 4px);
+    display: inline-block;
+    border: 1px solid black;
+    padding: 10px 0px;
+    border-radius: 10px;
+    text-align: center;
+    background: white;
+    color: black;
+    text-decoration: none;
+}
+
+.techPanel{
+    width: 100px;
+    margin: 10px;
+    float: left;
+    
+}
+
+.techFlag{
+    width: 100%;
+    border: solid black 2px;
+    background: orange;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.descrPanel{
+    width: calc(100% - 20px);
+    margin: 10px;
+    clear: both;
+}
+
 
 #navBar{
     position: fixed;
@@ -30,30 +116,34 @@ body{
     background: green;   
 }
 
-#projects{
-    height: 150vh;
-    background: red;
-}
-
-#education{
-    height: 110vh;
-    background: orange;
-}
-
 #upBtn{
     position: fixed;
-    top: 100px;
+    top: 50px;
     right: 50%;
     -ms-transform: translateX(50%);
     transform: translateX(50%);
+    height: 30px;
+    width: calc(100% - 17px *2);
+    background: none;
 }
 
 #downBtn{
     position: fixed;
-    bottom: 40px;
+    bottom: 0px;
     right: 50%;
    -ms-transform: translateX(50%);
     transform: translateX(50%);
+    height: 30px;
+    width: calc(100% - 17px *2);
+    background: none;
+}
+
+#upBtn:hover {
+    background: yellow;
+}
+
+#downBtn:hover {
+    background: yellow;
 }
 
 
@@ -62,6 +152,7 @@ body{
     margin: 0 auto;
     margin-top: calc(100vh*.4);
     width: 600px;
+    text-align: center;
 }
 
 #title{
@@ -69,4 +160,49 @@ body{
     margin-top: 20px;
     width: 250px;
     font-size: 30px;
+    text-align: center;
+}
+
+@media screen and (max-width: 1000px){
+    .projPac{
+        width: calc(100% - 10px);
+        margin: 5px;
+        min-width: 250px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    #name{
+        font-size: 50px;
+        width: 100%;
+    }
+
+    #title{
+        font-size: 25px;
+        width: 100%;
+    }
+
+    .sectionHeader{
+        font-size: 40px;
+    }
+
+    .secContent{
+        width: calc(100% - 40px);
+        min-width: 0;
+    }
+
+    .imgPanel{
+        width: calc(100% - 20px);
+        margin: 10px;
+    }
+
+    .projPac{
+        width: calc(100% - 10px);
+        margin: 5px;
+    }
+
+    .techPanel{
+        width: calc(100% - 20px);
+        margin: 10px;
+    }
 }

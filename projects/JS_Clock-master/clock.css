@@ -1,0 +1,137 @@
+:root{
+    --clckTextColor: rgb(38, 223, 38);
+    --clckBackground: #000000;
+    --clockFontSize: 100px;
+}
+
+/* orbitron-regular - latin */
+@font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./assets/fonts/orbitron-v9-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Orbitron Regular'), local('Orbitron-Regular'),
+        url('./assets/fonts/orbitron-v9-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('./assets/fonts/orbitron-v9-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+        url('./assets/fonts/orbitron-v9-latin-regular.woff') format('woff'), /* Modern Browsers */
+        url('./assets/fonts/orbitron-v9-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('./assets/fonts/orbitron-v9-latin-regular.svg#Orbitron') format('svg'); /* Legacy iOS */
+}
+
+html, body {
+    background: var(--clckBackground);
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+/*clock css styling*/
+.clock {
+    min-width: calc(var(--clockFontSize)*6.5);
+    min-height: calc(var(--clockFontSize)*2.5);
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    float: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--clckTextColor);
+    background: var(--clckBackground);
+}
+
+.clckDisplay{
+    color: var(--clckTextColor);
+    font-size: var(--clockFontSize);
+    font-family: Orbitron;
+    letter-spacing: 7px;
+    display: inline;  
+}
+
+.clckAmPm{
+    font-size: calc(var(--clockFontSize)/2);
+}
+
+.clckAlarm{
+    position: relative;
+    font-size: calc(var(--clockFontSize)/4);
+    font-family: Orbitron;
+    border: 1px var(--clckTextColor) solid;
+    border-radius: 15px;
+    width: 90%;
+    margin: 0% 5%;
+    margin-top: 10px;
+}
+
+.alrmHeader{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 10px;
+    background-color: var(--clckBackground);
+}
+
+.alrmDisplay{
+    display: inline;
+}
+
+.alrmAmPm{
+    font-size: calc(var(--clockFontSize)/8);
+}
+
+.alrmResetBtn{
+    border: none;
+    color: var(--clckBackground);
+    background: red;
+    font-size: 30px;
+
+    outline:0;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.armBtn{
+    background: var(--clckBackground);
+    color: var(--clckTextColor); 
+    border: 1px var(--clckTextColor) solid;
+    border-radius: 15px;
+    font-size: calc(var(--clockFontSize)/5);
+    text-align: center;
+    outline: 0;
+    padding: 5px;
+    width: 25%;
+    margin: 0% 5%;
+    float: left;
+}
+
+.alrmModify{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.disBlock{
+    display: block;
+}
+
+.disInline{
+    display: inline;
+}
+
+.hide{
+    display: none;
+}
+
+.cButton{
+    border: none;
+    background: var(--clckTextColor);
+    color: var(--clckBackground);
+    text-align: center;
+    font-size: calc(var(--clockFontSize)/5);
+    padding: 5px;
+    width: 7.5%;
+    outline:0;
+    border-radius: 100%;
+}
