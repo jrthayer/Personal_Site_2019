@@ -1,13 +1,31 @@
 var yPage;
+var xPage;
 var yLastPage;
-var upBtn = document.getElementById("upBtn");
-var downBtn = document.getElementById("downBtn");
+var xLastPage;
+var leftBtn = document.getElementById("leftBtn");
+var rightBtn = document.getElementById("rightBtn");
 var htmlElement = document.querySelector("html");
 //nav1.addEventListener("click", function(){alert("helloWorld")});
 var sectionsYPos = new Array();
+var sectionsXPos = new Array();
 var scrollTimeout;
 var scrollAmnt = 30;
 var scrollTic = 10;
+
+//Event Listeners
+//scrolls window on button press
+leftBtn.addEventListener("click", 
+    function(){
+        smoothScroll(window.scrollX, sectionsXPos[xPage-1], scrollAmnt, scrollTic);
+    }
+);
+
+rightBtn.addEventListener("click", 
+    function(){
+        smoothScroll(window.scrollX, sectionsXPos[xPage+1], scrollAmnt, scrollTic);
+    }
+);
+
 
 window.onbeforeunload = function () {
     window.scrollTo(0,0);
@@ -17,11 +35,16 @@ window.onload = function(){
     var sectionElements = document.getElementsByClassName("section");
 
     for(var i = 0; i < sectionElements.length; i++){
-        sectionsYPos.push(sectionElements[i].offsetTop-parseInt(window.getComputedStyle(sectionElements[i]).getPropertyValue('margin-top'), 10));
+        // sectionsYPos.push(sectionElements[i].offsetTop-parseInt(window.getComputedStyle(sectionElements[i]).getPropertyValue('margin-top'), 10));
+        sectionsXPos.push(sectionElements[i].offsetLeft);
     }
 
-    yPage = 0;
-    yLastPage = sectionsYPos.length - 1;
+    console.log(sectionsXPos);
+
+    // yPage = 0;
+    // yLastPage = sectionsYPos.length - 1;
+    xPage = 0;
+    xLastPage = sectionsXPos.length - 1;
 
     updateBtnVis();
     document.getElementById("nav0").addEventListener("click", function(){smoothScroll(window.scrollY, sectionsYPos[0], scrollAmnt, scrollTic)});
@@ -33,10 +56,11 @@ window.onload = function(){
 window.onresize = function(){
     var sectionElements = document.getElementsByClassName("section");
     for(var i = 0; i < sectionElements.length; i++){
-        sectionsYPos[i] = sectionElements[i].offsetTop-parseInt(window.getComputedStyle(sectionElements[i]).getPropertyValue('margin-top'), 10);
+        //sectionsYPos[i] = sectionElements[i].offsetTop-parseInt(window.getComputedStyle(sectionElements[i]).getPropertyValue('margin-top'), 10);
+        sectionsXPos[i] = sectionElements[i].offsetLeft;
     }
 
-    smoothScroll(window.scrollY, sectionsYPos[yPage], 50, 10);
+    smoothScroll(window.scrollX, sectionsXPos[xPage], 30, 10);
 }
 
 window.onscroll = function(){
@@ -47,61 +71,34 @@ window.onscroll = function(){
     }, 100);
 }
 
-
-//Event Listeners
-
-//scrolls window on button press
-upBtn.addEventListener("click", 
-    function(){
-        smoothScroll(window.scrollY, sectionsYPos[yPage-1], scrollAmnt, scrollTic);
-    }
-);
-
-downBtn.addEventListener("click", 
-    function(){
-        smoothScroll(window.scrollY, sectionsYPos[yPage+1], scrollAmnt, scrollTic);
-    }
-);
-
 function updatePageNum(){
-    var yPos = window.scrollY;
-    for(var i = sectionsYPos.length; i >= 0; i--){
-        if(yPos <= sectionsYPos[i]){
-            yPage = i; 
+    var xPos = window.scrollX;
+    for(var i = sectionsXPos.length; i >= 0; i--){
+        if(xPos <= sectionsXPos[i]){
+            xPage = i; 
         }
     }
-    console.log(yPage);
+    console.log(xPage);
     return true;
 }
 
 function updateBtnVis(){
-    if(yPage == 0){
-        upBtn.setAttribute("hidden", true);
+    if(xPage == 0){
+        leftBtn.setAttribute("hidden", true);
     }
     else{
-        upBtn.removeAttribute("hidden");
+        leftBtn.removeAttribute("hidden");
     }
 
-    if(yPage == yLastPage){
-        downBtn.setAttribute("hidden", true);
+    if(xPage == xLastPage){
+        rightBtn.setAttribute("hidden", true);
     }
     else{
-        downBtn.removeAttribute("hidden");
+        rightBtn.removeAttribute("hidden");
     }    
 }
 
 //Functions used for smooth scrolling
-function curYPos() {
-    // Firefox, Chrome, Opera, Safari
-    if (self.pageYOffset) return self.pageYOffset;
-    // Internet Explorer 6 - standards mode
-    if (document.documentElement && document.documentElement.scrollTop)
-        return document.documentElement.scrollTop;
-    // Internet Explorer 6, 7 and 8
-    if (document.body.scrollTop) return document.body.scrollTop;
-    return 0;
-}
-
 function smoothScroll(curPos, endPos, posChange, speed){
     var diff = posChange;
     
@@ -117,7 +114,7 @@ function smoothScroll(curPos, endPos, posChange, speed){
         }
     }
     
-    window.scrollTo(0, curPos);
+    window.scrollTo(curPos, 0);
 
     if(curPos != endPos) setTimeout(function(){smoothScroll(curPos, endPos, posChange, speed)}, speed);
 }
