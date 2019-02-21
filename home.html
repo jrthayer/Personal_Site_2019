@@ -3,6 +3,7 @@
     <head>
         <title>jrthayer</title>
         <link rel="stylesheet" type="text/css" href="home.css">
+        <link rel="stylesheet" type="text/css" href="assets/devicons.css">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
     </head>
 
@@ -39,13 +40,10 @@
                     </div>
                 </div>
                 <div class="techPanel">
-                   <!--  <div class="techFlag">Html</div>
-                    <div class="techFlag">CSS</div>
-                    <div class="techFlag">Javascript</div> -->
-                    <img src="assets/img/icons8-html-5-96.png" title="HTML5">
-                    <img src="assets/img/icons8-css3-96.png" title="CSS3">
-                    <img src="assets/img/icons8-javascript-96.png" title="JavaScript">
-                    <img src="assets/img/icons8-sublime-text-96-mf.png" title="SublimeText">
+                    <span class="devicons devicons-html5 techImg" title="HTML5">
+                    <span class="devicons devicons-css3 techImg" title="CSS3">
+                    <span class="devicons devicons-javascript techImg" title="JavaScript">
+                    <span class="devicons devicons-sublime techImg" title="SublimeText">
                 </div>
                 <div class="descrPanel">
                     This is a test descr for a project.This is a test descr for a project.This is a test descr for a project.This is a test descr for a project.This is a test descr for a project.This is a test descr for a project.This is a test descr for a project.This is a test descr for a project.This is a test descr for a project.
@@ -86,13 +84,15 @@
         </div>
 
         <nav id="navBar">
-            <button id="nav0">To The Top</button>
-            <button id="nav1">Projects</button>
-            <button id="nav2">Education</button>
+            <div class="linkWrap">
+                <a id="nav0" class="navLink">To The Top</a>
+                <a id="nav1" class="navLink">Projects</a>
+                <a id="nav2" class="navLink">Education</a>
+            </div>
         </nav>
 
-        <button id="leftBtn"><</button>
-        <button id="rightBtn">></button>
+        <button id="leftBtn" class="sideBtn">&#x2039;</button>
+        <button id="rightBtn" class="sideBtn">&#x203A;</button>
 
         <script type="text/javascript" src="home.js"></script>
     </body>

@@ -19,12 +19,17 @@ leftBtn.addEventListener("click",
         smoothScroll(window.scrollX, sectionsXPos[xPage-1], scrollAmnt, scrollTic);
     }
 );
+leftBtn.addEventListener("mouseover", function(){leftBtn.innerHTML = "&#xab;";});
+leftBtn.addEventListener("mouseout", function(){leftBtn.innerHTML = "&#x2039;";});
+
 
 rightBtn.addEventListener("click", 
     function(){
         smoothScroll(window.scrollX, sectionsXPos[xPage+1], scrollAmnt, scrollTic);
     }
 );
+rightBtn.addEventListener("mouseover", function(){rightBtn.innerHTML = "&#xbb;";});
+rightBtn.addEventListener("mouseout", function(){rightBtn.innerHTML = "&#x203A;";});
 
 
 window.onbeforeunload = function () {
@@ -47,9 +52,15 @@ window.onload = function(){
     xLastPage = sectionsXPos.length - 1;
 
     updateBtnVis();
-    document.getElementById("nav0").addEventListener("click", function(){smoothScroll(window.scrollY, sectionsYPos[0], scrollAmnt, scrollTic)});
-    document.getElementById("nav1").addEventListener("click", function(){smoothScroll(window.scrollY, sectionsYPos[1], scrollAmnt, scrollTic)});
-    document.getElementById("nav2").addEventListener("click", function(){smoothScroll(window.scrollY, sectionsYPos[2], scrollAmnt, scrollTic)});
+    document.getElementById("nav0").addEventListener("click", function(){
+        smoothScroll(window.scrollX, sectionsXPos[0], scrollAmnt, scrollTic);
+    });
+    document.getElementById("nav1").addEventListener("click", function(){
+        smoothScroll(window.scrollX, sectionsXPos[1], scrollAmnt, scrollTic);
+    });
+    document.getElementById("nav2").addEventListener("click", function(){
+        smoothScroll(window.scrollX, sectionsXPos[2], scrollAmnt, scrollTic);
+    });
 
 };
 
@@ -68,6 +79,8 @@ window.onscroll = function(){
     scrollTimeout = window.setTimeout(function(){
         updatePageNum();
         updateBtnVis();
+        tabSelected();
+
     }, 100);
 }
 
@@ -80,6 +93,16 @@ function updatePageNum(){
     }
     console.log(xPage);
     return true;
+}
+
+function tabSelected(){
+    var navElements = document.getElementsByClassName("navLink");
+    for(var i = 0; i < navElements.length; i++){
+        //sectionsYPos[i] = sectionElements[i].offsetTop-parseInt(window.getComputedStyle(sectionElements[i]).getPropertyValue('margin-top'), 10);
+        navElements[i].classList.remove("navSelected");
+    }
+
+    navElements[xPage].classList.add("navSelected");
 }
 
 function updateBtnVis(){
