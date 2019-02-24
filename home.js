@@ -5,31 +5,12 @@ var xLastPage;
 var leftBtn = document.getElementById("leftBtn");
 var rightBtn = document.getElementById("rightBtn");
 var htmlElement = document.querySelector("html");
-//nav1.addEventListener("click", function(){alert("helloWorld")});
 var sectionsYPos = new Array();
 var sectionsXPos = new Array();
 var scrollTimeout;
 var scrollAmnt = 30;
 var scrollTic = 10;
 
-//Event Listeners
-//scrolls window on button press
-leftBtn.addEventListener("click", 
-    function(){
-        smoothScroll(window.scrollX, sectionsXPos[xPage-1], scrollAmnt, scrollTic);
-    }
-);
-leftBtn.addEventListener("mouseover", function(){leftBtn.innerHTML = "&#xab;";});
-leftBtn.addEventListener("mouseout", function(){leftBtn.innerHTML = "&#x2039;";});
-
-
-rightBtn.addEventListener("click", 
-    function(){
-        smoothScroll(window.scrollX, sectionsXPos[xPage+1], scrollAmnt, scrollTic);
-    }
-);
-rightBtn.addEventListener("mouseover", function(){rightBtn.innerHTML = "&#xbb;";});
-rightBtn.addEventListener("mouseout", function(){rightBtn.innerHTML = "&#x203A;";});
 
 
 window.onbeforeunload = function () {
@@ -82,6 +63,21 @@ window.onscroll = function(){
         tabSelected();
 
     }, 100);
+}
+
+function buttonToPrimary(elem){
+    var color = window.getComputedStyle(elem, null).getPropertyValue("background-color");
+    var components = color.replace(/[^\d,]/g, '').split(',');
+    var r = components[0];
+    var g = components[1];
+    var b = components[2];
+    
+    var rgbHover = "rgb(" + (Number(r)-40) + "," + (Number(g)-40) + "," + (Number(b)-40) + ")";
+    var rgbShadow = "rgb(" + (Number(r)-60) + "," + (Number(g)-60) + "," + (Number(b)-60) + ")";
+
+    document.documentElement.style.setProperty('--primary-color', color);
+    document.documentElement.style.setProperty('--primary-color-hover', rgbHover);
+    document.documentElement.style.setProperty('--primary-color-shadow', rgbShadow);
 }
 
 function updatePageNum(){
@@ -142,3 +138,55 @@ function smoothScroll(curPos, endPos, posChange, speed){
     if(curPos != endPos) setTimeout(function(){smoothScroll(curPos, endPos, posChange, speed)}, speed);
 }
 
+//Event Listeners
+//scrolls window on button press
+leftBtn.addEventListener("click", 
+    function(){
+        smoothScroll(window.scrollX, sectionsXPos[xPage-1], scrollAmnt, scrollTic);
+    }
+);
+leftBtn.addEventListener("mouseover", function(){leftBtn.innerHTML = "&#xab;";});
+leftBtn.addEventListener("mouseout", function(){leftBtn.innerHTML = "&#x2039;";});
+
+
+rightBtn.addEventListener("click", 
+    function(){
+        smoothScroll(window.scrollX, sectionsXPos[xPage+1], scrollAmnt, scrollTic);
+    }
+);
+rightBtn.addEventListener("mouseover", function(){rightBtn.innerHTML = "&#xbb;";});
+rightBtn.addEventListener("mouseout", function(){rightBtn.innerHTML = "&#x203A;";});
+
+//color palettes
+document.getElementById("red").addEventListener("click", function(){
+    buttonToPrimary(document.getElementById("red"));
+    }
+);
+document.getElementById("orange").addEventListener("click", function(){
+    buttonToPrimary(document.getElementById("orange"));
+    }
+);
+document.getElementById("brown").addEventListener("click", function(){
+    buttonToPrimary(document.getElementById("brown"));
+    }
+);
+document.getElementById("blue").addEventListener("click", function(){
+    buttonToPrimary(document.getElementById("blue"));
+    }
+);
+document.getElementById("green").addEventListener("click", function(){
+    buttonToPrimary(document.getElementById("green"));
+    }
+);
+document.getElementById("black").addEventListener("click", function(){
+    buttonToPrimary(document.getElementById("black"));
+    }
+);
+document.getElementById("purple").addEventListener("click", function(){
+    buttonToPrimary(document.getElementById("purple"));
+    }
+);
+document.getElementById("teal").addEventListener("click", function(){
+    buttonToPrimary(document.getElementById("teal"));
+    }
+);
