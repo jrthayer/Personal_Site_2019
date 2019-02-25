@@ -5,6 +5,23 @@
     --secondary-color: rgb(255, 255, 255);
 }
 
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--primary-color);
+    border-radius: 25px; 
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: var(--primary-color-hover); 
+}
+
 html{
     background: var(--secondary-color);
     margin: 0;
@@ -25,24 +42,25 @@ body{
 }
 
 .section{
-    height: calc(100vh - 50px);
-    width: 100vw;
+    height: calc(100vh - 51px);
+    width: calc(100vw - 60px);
     overflow: auto;
-    margin-top: 50px;
+    margin: 0 30px;
+    margin-top: 40px;
     float: left;
 }
 
 .sectionHeader{
     text-align: center;
     margin: 40px 0;
-    font-size: 60px;
+    font-size: 100px;
     color: var(--primary-color);
 }
 
 .secContent{
     width: calc(100vw - 200px);
     min-width: 500px;
-    max-width: 1000px;
+    max-width: 850px;
     margin: 0 auto;
     margin-top: 20px;
     margin-bottom: 40px;
@@ -58,33 +76,42 @@ body{
     margin: 10px;
     margin-top: 20px;
     text-align: center;
-    font-size: 35px;
+    font-size: 50px;
+    font-weight: bold;
+    padding: 10px;
+    color: var(--secondary-color);
 }
 
-.imgPanel{
-    width: calc(100% - 100px - 40px);
+.pacHalf{
+    float: left;
+    width: calc(50% - 20px);
     margin: 10px;
-    margin-right: 0px;
-    float: left;
-    display: inline-block;
 }
 
-.projPac{
-    width: calc(50% - 10px);
-    margin: 5px;
+.pacFull{
+    margin: 0 auto;
     margin-top: 15px;
-    float: left;
+    width: calc(100%);
 }
 
 .pacImg{
     border-radius: 15px;
     width: 100%;
     height: auto;
+    max-width: 640px;
+    max-height: 360px;
+}
+
+.imgPanel{
+    margin: 20px;
+}
+
+.imgDull{
+    filter: brightness(95%);
 }
 
 .pacBtn{
     font-weight: bold;
-    min-width: calc(50% - 4px);
     display: inline-block;
     padding: 10px 0px;
     border-radius: 10px;
@@ -95,29 +122,47 @@ body{
     box-shadow: 2px 2px 8px var(--primary-color-shadow);
 }
 
+.btnHalf{
+    width: calc(50% - 4px);
+    max-width: calc(640px / 2);
+}
+
+.btnFull{
+    width: calc(100% - 4px);
+    max-width: calc(640px);
+}
+
 .pacBtn:hover{
     color: var(--secondary-color);
     background: var(--primary-color-hover);
 }
 
-.techPanel{
-    width: 100px;
-    margin: 10px;
-    margin-top: 15px;
-    float: left;
-
+.techImg{
+    margin-top: 5px;
+    font-size: 80px;
+    display: inline-block;
 }
 
-.techImg{
-    font-size: 100px;
-    margin: auto;
+.techPanel{
+    display: inline-block;
 }
 
 
 .descrPanel{
-    width: calc(100% - 20px);
-    margin: 10px;
+    border: solid 2px var(--secondary-color);
+    border-radius: 15px;
+    width: calc(100% - 60px);
+    margin: 10px auto;
     clear: both;
+    text-align: left;
+
+}
+
+.descrHeader{
+    padding-left: 15px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    border-bottom: 2px solid var(--secondary-color);
 }
 
 
@@ -168,13 +213,13 @@ body{
 #rightBtn{
     position: fixed;
     top: 50px;
-    right: calc(0px + 17px);
+    right: 0px;
 }
 
 #name{
     font-size: 100px;
     margin: 0 auto;
-    margin-top: calc(100vh*.25);
+    margin-top: calc(100vh*.2);
     width: 100%;
     text-align: center;
 }
@@ -188,9 +233,6 @@ body{
 }
 
 #colorSwap{
-    /*position: absolute;
-    bottom: 50px;
-    right: 25px;*/
     font-size: 25px;
     color: var(--primary-color);
     background: var(--secondary-color);
@@ -198,16 +240,16 @@ body{
     font-weight: bold;
     margin-top: 100px;
     width: 280px;
-    min-width: 300px;
+    min-width: 0px;
 }
 
 .colorIcon{
     margin: 5px;
-    width: calc(70px - 10px - 2px - 5px);
-    height: calc(70px - 10px - 2px - 5px);
+    width: calc(70px - 10px - 2px - 10px);
+    height: calc(70px - 10px - 2px - 10px);
     display: inline-block;
     text-align: center;
-    border-radius: 100%;
+    border-radius: 5px;
     border: 1px solid var(--primary-color);
 }
 
@@ -243,8 +285,11 @@ body{
     background-color: rgb(0, 204, 163);
 }
 
-
 @media screen and (max-width: 1000px){
+    ::-webkit-scrollbar{
+        width: 5px;
+    }
+
     #name{
         font-size: 70px;
     }
@@ -253,16 +298,38 @@ body{
         font-size: 35px;
     }
 
-    .projPac{
-        width: calc(100% - 10px);
+    .pacHalf{
+        margin: 20px;
+        width: calc(100% - 40px);
+        float: none;
     }
 
-    /*.colorIcon{
-        width: calc(25% - 10px - 2px - 10px);
-    }*/
+    .techImg{
+        font-size: 80px;
+    }
+
+    .pacFull{
+        margin: 0 auto;
+        margin-top: 15px;
+        width: calc(100% - 40px);
+    }
+
+    .descrPanel{
+        width: calc(100% - 90px);
+    }
+}
+
+@media screen and (max-width: 900px){
+    .techImg{
+        font-size: 70px;
+    }
 }
 
 @media screen and (max-width: 600px){
+    ::-webkit-scrollbar{
+        width: 0px;
+    }
+
     #name{
         font-size: 50px;
         width: 100%;
@@ -272,48 +339,59 @@ body{
         font-size: 25px;
     }
 
-    /*#rightBtn{
-        right: 0px;
-    }*/
-
     .sectionHeader{
         font-size: 40px;
     }
 
     .secContent{
-        width: calc(100% - 80px);
+        width: calc(100vw - 100px);
         min-width: 0;
+        margin: 20px auto;
     }
 
     .secContentHeader{
-        font-size: 30px;
+        font-size: 30px; 
     }
 
     .imgPanel{
-        width: calc(100% - 20px);
-    }
-
-    .projPac{
-        width: calc(100% - 10px);
+        margin: 0px;
     }
 
     .techImg{
-        font-size: 70px;
+        font-size: 50px;
     }
 
     .techPanel{
         width: 100%;
-        margin: 10px auto;
+        margin-top: 0px;
     }
 
     .navLink{
         font-size: 20px;
         margin: 0 10px;
     }
-}
 
-@media screen and (max-width: 600px){
-    #rightBtn{
-        right: 0px;
+    #colorSwap{
+        font-size: 15px;
+        width: 200px;
+    }
+
+    .colorIcon{
+        width: calc(50px - 10px - 2px - 5px);
+        height: calc(50px - 10px - 2px - 5px);
+    }
+
+    .pacHalf{
+        width: calc(100% - 20px);
+        margin: 10px;
+    }
+
+    .pacFull{
+        width: calc(100% - 20px);
+        margin: 10px;
+    }
+
+    .descrPanel{
+        width: calc(100% - 30px);
     }
 }

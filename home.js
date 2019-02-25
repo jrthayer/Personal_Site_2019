@@ -22,10 +22,9 @@ window.onload = function(){
 
     for(var i = 0; i < sectionElements.length; i++){
         // sectionsYPos.push(sectionElements[i].offsetTop-parseInt(window.getComputedStyle(sectionElements[i]).getPropertyValue('margin-top'), 10));
-        sectionsXPos.push(sectionElements[i].offsetLeft);
+        //the minus 30 value is for the margin of section
+        sectionsXPos.push(sectionElements[i].offsetLeft - 30);
     }
-
-    console.log(sectionsXPos);
 
     // yPage = 0;
     // yLastPage = sectionsYPos.length - 1;
@@ -49,7 +48,7 @@ window.onresize = function(){
     var sectionElements = document.getElementsByClassName("section");
     for(var i = 0; i < sectionElements.length; i++){
         //sectionsYPos[i] = sectionElements[i].offsetTop-parseInt(window.getComputedStyle(sectionElements[i]).getPropertyValue('margin-top'), 10);
-        sectionsXPos[i] = sectionElements[i].offsetLeft;
+        sectionsXPos[i] = sectionElements[i].offsetLeft - 30;
     }
 
     smoothScroll(window.scrollX, sectionsXPos[xPage], 30, 10);
@@ -188,5 +187,15 @@ document.getElementById("purple").addEventListener("click", function(){
 );
 document.getElementById("teal").addEventListener("click", function(){
     buttonToPrimary(document.getElementById("teal"));
+    }
+);
+
+//giff events
+document.getElementById("pong").addEventListener("mouseover", function(){
+        document.getElementById("pong").src = "assets/img/pong.gif";
+    }
+);
+document.getElementById("pong").addEventListener("mouseout", function(){
+        document.getElementById("pong").src = "assets/img/pong.jpg";
     }
 );

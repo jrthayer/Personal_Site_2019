@@ -1,0 +1,68 @@
+#left-col{
+	float: left;
+    /*background: lightblue;*/
+	width: 65%;
+	height: 100%;
+	position: relative;
+}
+
+#seperation{
+	float: right;
+	background: lightblue;
+	width: 5%
+}
+
+#right-col{
+	float: right;
+	width: 30%
+}
+
+.categories{
+	text-transform: uppercase;
+	color: blue;
+	margin-top: 25px;
+}
+
+.dates{
+	color: lightgrey;
+
+	margin-top: 0px;
+	margin-bottom: 25px;
+}
+
+.statements{
+	margin-top: -10px;
+	margin-left: 20px;
+}
+
+
+.name{
+	font-size:300%;
+	vertical-align: middle;
+}
+
+.logo{float: left;}
+
+.top{
+	clear: both;
+	display: flex;
+	align-content: flex-start;
+}
+
+.row{clear: both;}
+
+.closer{
+	line-height: 5px;
+}
+
+.away{
+	padding-bottom: 15px;
+}
+
+h4{
+	line-height: 0px;
+}
+
+
+
+ul li{padding: 2px 0px;}
