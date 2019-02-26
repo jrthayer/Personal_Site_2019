@@ -27,7 +27,7 @@ html{
     margin: 0;
     overflow-y: hidden;
     overflow-x: hidden;
-    width: calc(100vw*3);
+    width: calc(100vw*4);
     height: 100%;
     font-family: Helvetica;
 }
@@ -35,6 +35,14 @@ html{
 body{
     margin: 0;
 
+}
+
+ul{
+    padding-right: 5px;
+}
+
+li{
+    margin-bottom: 10px;
 }
 
 .simpleShadow{
@@ -46,7 +54,7 @@ body{
     width: calc(100vw - 60px);
     overflow: auto;
     margin: 0 30px;
-    margin-top: 40px;
+    margin-top: 51px;
     float: left;
 }
 
@@ -62,7 +70,6 @@ body{
     min-width: 500px;
     max-width: 850px;
     margin: 0 auto;
-    margin-top: 20px;
     margin-bottom: 40px;
     border-radius: 15px;
     background: var(--primary-color);
@@ -82,16 +89,13 @@ body{
     color: var(--secondary-color);
 }
 
-.pacHalf{
-    float: left;
-    width: calc(50% - 20px);
+.projPac{
     margin: 10px;
 }
 
-.pacFull{
-    margin: 0 auto;
-    margin-top: 15px;
-    width: calc(100%);
+.pacHalf{
+    float: left;
+    width: calc(50% - 20px);
 }
 
 .pacImg{
@@ -103,7 +107,8 @@ body{
 }
 
 .imgPanel{
-    margin: 20px;
+    margin: 10px;
+    display: inline-block;
 }
 
 .imgDull{
@@ -147,22 +152,25 @@ body{
     display: inline-block;
 }
 
-
-.descrPanel{
-    border: solid 2px var(--secondary-color);
-    border-radius: 15px;
-    width: calc(100% - 60px);
-    margin: 10px auto;
-    clear: both;
-    text-align: left;
-
-}
-
 .descrHeader{
     padding-left: 15px;
     margin-left: 0px;
     margin-bottom: 0px;
     border-bottom: 2px solid var(--secondary-color);
+}
+
+.descrPanel{
+    border: solid 2px var(--secondary-color);
+    border-radius: 15px;
+    margin: 0px 20px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.descrFull{
+    width: calc(100% - 4px);
+    max-width: calc(640px);
+    margin: 0px auto;
 }
 
 
@@ -176,7 +184,7 @@ body{
 }
 
 .linkWrap{
-    margin: 15px 0;
+    margin: 15px 0px;
 }
 
 .navLink{
@@ -220,7 +228,6 @@ body{
     font-size: 100px;
     margin: 0 auto;
     margin-top: calc(100vh*.2);
-    width: 100%;
     text-align: center;
 }
 
@@ -295,12 +302,23 @@ body{
     }
 
     #title{
-        font-size: 35px;
+        font-size: 30px;
+    }
+
+    .sectionHeader{
+        font-size: 70px;
+    }
+
+    .secContentHeader{
+        font-size: 40px;
+    }
+
+    .projPac{
+        margin-bottom: 20px;
     }
 
     .pacHalf{
-        margin: 20px;
-        width: calc(100% - 40px);
+        width: auto;
         float: none;
     }
 
@@ -308,20 +326,30 @@ body{
         font-size: 80px;
     }
 
-    .pacFull{
-        margin: 0 auto;
-        margin-top: 15px;
-        width: calc(100% - 40px);
-    }
-
     .descrPanel{
-        width: calc(100% - 90px);
+        width: calc(100% - 4px);
+        max-width: calc(640px);
+        margin: 0px auto;
     }
 }
 
 @media screen and (max-width: 900px){
     .techImg{
         font-size: 70px;
+    }
+
+    .descrPanel{
+        width: auto;
+        max-width: none;
+        margin: 0px 20px;
+        margin-bottom: 10px;
+    }
+
+    .descrFull{
+        width: auto;
+        max-width: none;
+        margin: 0px 20px;
+        margin-bottom: 10px;
     }
 }
 
@@ -332,7 +360,6 @@ body{
 
     #name{
         font-size: 50px;
-        width: 100%;
     }
 
     #title{
@@ -340,7 +367,7 @@ body{
     }
 
     .sectionHeader{
-        font-size: 40px;
+        font-size: 50px;
     }
 
     .secContent{
@@ -351,19 +378,15 @@ body{
 
     .secContentHeader{
         font-size: 30px; 
+        margin-bottom: 0px;
     }
 
-    .imgPanel{
-        margin: 0px;
+    .projPac{
+        margin: 20px 10px;
     }
 
     .techImg{
         font-size: 50px;
-    }
-
-    .techPanel{
-        width: 100%;
-        margin-top: 0px;
     }
 
     .navLink{
@@ -381,17 +404,15 @@ body{
         height: calc(50px - 10px - 2px - 5px);
     }
 
-    .pacHalf{
-        width: calc(100% - 20px);
-        margin: 10px;
+    .linkWrap{
+        text-align: center;
     }
+}
 
-    .pacFull{
-        width: calc(100% - 20px);
-        margin: 10px;
-    }
-
-    .descrPanel{
-        width: calc(100% - 30px);
+@media screen and (max-width: 500px){
+    .navLink{
+        font-size: 18px;
+        margin: 0 5px;
+        color: var(--secondary-color);
     }
 }

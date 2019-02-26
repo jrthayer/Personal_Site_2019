@@ -26,6 +26,8 @@ window.onload = function(){
         sectionsXPos.push(sectionElements[i].offsetLeft - 30);
     }
 
+    console.log(sectionsXPos);
+
     // yPage = 0;
     // yLastPage = sectionsYPos.length - 1;
     xPage = 0;
@@ -40,6 +42,9 @@ window.onload = function(){
     });
     document.getElementById("nav2").addEventListener("click", function(){
         smoothScroll(window.scrollX, sectionsXPos[2], scrollAmnt, scrollTic);
+    });
+    document.getElementById("nav3").addEventListener("click", function(){
+        smoothScroll(window.scrollX, sectionsXPos[3], scrollAmnt, scrollTic);
     });
 
 };
