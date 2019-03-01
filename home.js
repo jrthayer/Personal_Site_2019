@@ -1,5 +1,5 @@
-var yPage;
-var xPage;
+var yPage = 0;
+var xPage = 0;
 var yLastPage;
 var xLastPage;
 var leftBtn = document.getElementById("leftBtn");
@@ -13,8 +13,9 @@ var scrollTic = 10;
 
 
 
-window.onbeforeunload = function () {
+window.onbeforeunload = window.onunload = function () {
     window.scrollTo(0,0);
+    xPage = 0;
 };
 
 window.onload = function(){
@@ -28,8 +29,6 @@ window.onload = function(){
 
     console.log(sectionsXPos);
 
-    // yPage = 0;
-    // yLastPage = sectionsYPos.length - 1;
     xPage = 0;
     xLastPage = sectionsXPos.length - 1;
 

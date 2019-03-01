@@ -343,6 +343,10 @@ li ul{
     color: var(--secondary-color);
 }
 
+.contact{
+    font-size: 35px;
+}
+
 @media screen and (max-width: 1000px){
     ::-webkit-scrollbar{
         width: 5px;
@@ -394,6 +398,10 @@ li ul{
     #chicoTitle{
         font-size: 35px;
     }
+
+    #chicoEnd{
+        font-size: 15px;
+    }
 }
 
 @media screen and (max-width: 900px){
@@ -425,6 +433,14 @@ li ul{
 
     #chicoTitle{
         font-size: 27px;
+    }
+
+    #chicoEnd{
+        font-size: 12px;
+    }
+
+    .contact{
+        font-size: 30px;
     }
 }
 
@@ -503,6 +519,14 @@ li ul{
     #chicoTitle{
         font-size: 20px;
     }
+
+    #chicoEnd{
+        font-size: 10px;
+    }
+
+    .contact{
+        font-size: 25px;
+    }
 }
 
 @media screen and (max-width: 500px){
@@ -528,6 +552,14 @@ li ul{
     #chicoTitle{
         font-size: 15px;
     }
+
+    #chicoEnd{
+        font-size: 8px;
+    }
+
+    .contact{
+        font-size: 20px;
+    }
 }
 
 @media screen and (max-width: 450px){
@@ -541,11 +573,29 @@ li ul{
 }
 
 @media screen and (max-width: 380px){
+    #name{
+        margin-top: calc(100vh * .1);
+    }
+
+    #title{
+        width: 220px;
+        padding: 5px;
+    }
+
+    .sectionHeader{
+        margin: 20px;
+        font-size: 45px;
+    }
+
     #seal{
         max-height: 20px;
     }
 
     #banner{
         max-height: 20px;
+    }
+
+    .contact{
+        font-size: 15px;
     }
 }
