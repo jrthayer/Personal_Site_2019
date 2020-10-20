@@ -65,7 +65,7 @@ li ul{
     float: left;
 }
 
-.sectionHeader{
+.secHeader{
     text-align: center;
     margin: 40px 0;
     font-size: 100px;
@@ -89,7 +89,7 @@ li ul{
     border: solid 5px var(--primary-color-hover);
 }
 
-.secContentHeader{
+.secContHeader{
     margin: 10px;
     margin-top: 20px;
     text-align: center;
@@ -360,11 +360,11 @@ li ul{
         font-size: 30px;
     }
 
-    .sectionHeader{
+    .secHeader{
         font-size: 70px;
     }
 
-    .secContentHeader{
+    .secContHeader{
         font-size: 40px;
     }
 
@@ -457,7 +457,7 @@ li ul{
         font-size: 25px;
     }
 
-    .sectionHeader{
+    .secHeader{
         font-size: 50px;
     }
 
@@ -467,7 +467,7 @@ li ul{
         margin: 20px auto;
     }
 
-    .secContentHeader{
+    .secContHeader{
         font-size: 30px; 
         margin-bottom: 0px;
     }
@@ -530,7 +530,7 @@ li ul{
 }
 
 @media screen and (max-width: 500px){
-    .secContentHeader{
+    .secContHeader{
         font-size: 20px; 
         margin-bottom: 0px;
     }
@@ -582,7 +582,7 @@ li ul{
         padding: 5px;
     }
 
-    .sectionHeader{
+    .secHeader{
         margin: 20px;
         font-size: 45px;
     }
