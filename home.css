@@ -52,8 +52,21 @@ li ul{
     padding-top: 0px;
 }
 
+.slimBorder{
+    border: solid 2px var(--secondary-color);
+    border-radius: 15px;
+}
+
 .simpleShadow{
     text-shadow: 1px 2px 0px rgba(0,0,0,1);
+}
+
+.header{
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    padding: 10px;
+    color: var(--secondary-color);
 }
 
 .section{
@@ -83,20 +96,16 @@ li ul{
     border-radius: 15px;
     background: var(--primary-color);
     color: var(--secondary-color);
-    padding: 1px;
+    padding: 20px;
     text-align: center;
     box-shadow: 3px 6px 8px var(--primary-color-shadow);
     border: solid 5px var(--primary-color-hover);
 }
 
 .secContHeader{
-    margin: 10px;
-    margin-top: 20px;
-    text-align: center;
-    font-size: 50px;
-    font-weight: bold;
-    padding: 10px;
-    color: var(--secondary-color);
+    padding: 20px 0px;
+    border-bottom: solid 2px var(--secondary-color);
+    border-radius: 15px;
 }
 
 .projPac{
@@ -117,8 +126,8 @@ li ul{
 }
 
 .imgPanel{
-    margin: 10px;
-    display: inline-block;
+   margin: 20px 0px;
+   display: inline-block
 }
 
 .imgDull{
@@ -160,6 +169,7 @@ li ul{
 
 .techPanel{
     display: inline-block;
+    padding-top: 20px;
 }
 
 .descrHeader{
@@ -171,17 +181,9 @@ li ul{
 }
 
 .descrPanel{
-    border: solid 2px var(--secondary-color);
-    border-radius: 15px;
-    margin: 0px 20px;
-    margin-bottom: 10px;
     text-align: left;
-}
-
-.descrFull{
-    width: calc(100% - 4px);
-    max-width: calc(640px);
-    margin: 0px auto;
+    border-top: solid 2px var(--secondary-color);
+    border-radius: 15px;
 }
 
 #navBar{
@@ -247,6 +249,7 @@ li ul{
     width: 250px;
     font-size: 50px;
     text-align: center;
+    padding:1px;
 }
 
 #colorSwap{
@@ -381,12 +384,6 @@ li ul{
         font-size: 80px;
     }
 
-    .descrPanel{
-        width: calc(100% - 4px);
-        max-width: calc(640px);
-        margin: 0px auto;
-    }
-
     #seal{
         max-height: 80px;
     }
@@ -412,14 +409,6 @@ li ul{
     .descrPanel{
         width: auto;
         max-width: none;
-        margin: 0px 20px;
-        margin-bottom: 10px;
-    }
-
-    .descrFull{
-        width: auto;
-        max-width: none;
-        margin: 0px 20px;
         margin-bottom: 10px;
     }
 
@@ -462,9 +451,8 @@ li ul{
     }
 
     .secContent{
-        width: calc(100vw - 100px);
         min-width: 0;
-        margin: 20px auto;
+        width: auto;
     }
 
     .secContHeader{
